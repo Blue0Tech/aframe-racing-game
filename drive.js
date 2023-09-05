@@ -5,6 +5,7 @@ AFRAME.registerComponent('drive',{
     },
     driveControls: function() {
         let camera = document.querySelector('#camera');
+        camera.setAttribute('velocity',[]);
         window.addEventListener('keydown',(key)=>{
             let cameraRig = document.querySelector('#cameraRig');
             var cameraRotation = cameraRig.getAttribute('rotation');
