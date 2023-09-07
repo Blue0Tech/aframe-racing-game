@@ -119,13 +119,5 @@ AFRAME.registerComponent('control',{
         });
     },
     tick: function() {
-        let camera = document.getElementById('camera');
-        let camPos = camera.getAttribute('position');
-        if(camPos.y < 0.1) {
-            let camVel = camera.getAttribute('velocity');
-            camVel.y = Math.abs(camVel.y)/4;
-            camera.setAttribute('velocity',camVel);
-        };
-        camera.object3D.rotation.y *= 0.99;
     }
 });

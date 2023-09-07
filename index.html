@@ -15,12 +15,13 @@
     </head>
 
     <body>
-        <a-scene physics="gravity:0; debug:true;" inspector-plugin-recast gameplay>
-            <a-entity id="cameraRig" kinematic-body control movement-controls="enabled: true; controls: keyboard; speed: 0;"><!--drive-->
-                <a-entity camera id="camera" position="0 1 7" look-controls="pointerLockEnabled: true;">
+        <a-scene physics="gravity:0; debug:true;" gameplay>
+            <a-entity id="cameraRig" position="0 1 7" kinematic-body control movement-controls="enabled: true; controls: keyboard; speed: 0;"><!--drive-->
+                <a-entity camera id="camera" look-controls="pointerLockEnabled: true;">
                     <a-box id="acc" src="./assets/acc.png" position="-0.289 -0.234 -0.372" color="grey" scale="0.05 0.1 0.001"></a-box>
                     <a-box id="brake" src="./assets/break.png" position="-0.43 -0.23 -0.372" color="grey" scale="0.05 0.1 0.001"></a-box>
                     <a-entity id="timer" text="align: center; color: red; value: TIME" position="0.7 0.3 -0.5"></a-entity>
+                    <a-entity id="lapCount" text="align: center; color: red; value: LAPS: 1" position="0.7 0.2 -0.5"></a-entity>
                     <a-entity id= "steering" gltf-model="#wheel" position="0.13 -0.12 -0.16" scale="0.001 0.001 0.001"></a-entity>
                 </a-entity>
             </a-entity>
@@ -34,7 +35,7 @@
             <a-plane static-body color="darkgrey" rotation="-90 0 0" width="200" height="200" position="0 0 0"></a-plane>
             <a-entity gltf-model="#halfmap"></a-entity>
             <a-entity gltf-model="#halfmap" rotation="0 180 0" position="-76 0 2"></a-entity>
-            <a-box id="boxcollide" static-body position="0 2 -2" scale="4 4 4"></a-box> <!--testing for collisions-->
+            <a-plane position="0 2 9" rotation="0 0 0" width="4" height="4" color="green" opacity="0.5"></a-plane>
         </a-scene>
     </body>
 </html>
